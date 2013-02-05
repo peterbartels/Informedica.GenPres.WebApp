@@ -1,48 +1,49 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
-        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
-    </head>
-    <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
-                @RenderBody()
-            </section>
-        </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
-                </div>
-            </div>
-        </footer>
+﻿﻿@*
+General setup for all GenPres sites:
+- Home: The Acceptation/Production version
+- Debug: The Acceptation/Production version with Loader enabled for ExtJs
+- Tests: Runs individual tests
+- AppTest: Runs app specific use case scenario's
+*@
 
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
-    </body>
+<!DOCTYPE html>
+@* 
+    Add style element for the EditableComboBox class
+    TODO: generate special genpres.css
+*@
+<style>
+ .x-form-add-trigger {
+   background-image: url(./Client/Library/extjs/resources/themes/images/default/form/search-trigger.gif) !important;
+ }
+</style>
+
+<html>
+
+<head>
+    <title>@ViewBag.Title</title>
+
+    <!--<link rel="stylesheet" type="text/css" href="@Url.Content("~/Client/Library/extjs/resources/css/ext-all-gray.css")" />-->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Client/GenPres/style/css/GenPres.css")" />
+
+    @RenderSection("CSS", false)
+
+    <script type="text/javascript">
+        Ext = {};
+        Ext.app = {};
+    </script>    
+    
+    <!--<script type="text/javascript" src="@Url.Content("~/DirectApi")"></script>-->
+    
+    <script type="text/javascript">
+    //    Ext.app.REMOTING_API.enableBuffer = 100;
+    </script>    
+    <!--
+    <script type="text/javascript" src="@Url.Content("~/Client/GenPres/app/AppConfig.js")"></script>
+    -->
+    @RenderSection("Javascript", false)
+
+</head>
+<body>
+    @RenderBody()
+</body>
 </html>

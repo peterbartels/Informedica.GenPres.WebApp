@@ -1,0 +1,1 @@
+C:\Development\Ext\jsbuilder\JSBuilder.bat --projectFile GenPres.jsb3 --deployDir C:\Development\ExtBuild --verbose
