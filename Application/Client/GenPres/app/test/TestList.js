@@ -1,5 +1,6 @@
 Ext.define('GenPres.test.TestList', {
     tests: [
+        'GenPres.test.controller.LoginController'
         /*'GenPres.test.extjs.ClassTests',
         'GenPres.test.extjs.ComponentQueryTests',
         'GenPres.test.extjs.LoaderTests',
@@ -11,8 +12,8 @@ Ext.define('GenPres.test.TestList', {
         'GenPres.test.store.SubstanceUnit',
         'GenPres.test.view.PrescriptionFormTest',
         'GenPres.test.control.UnitValueFieldTest',
-        'GenPres.test.view.PrescriptionPatientTest',*/
-        'GenPres.test.view.PrescriptionVisibilityTest'/*,
+        'GenPres.test.view.PrescriptionPatientTest',
+        'GenPres.test.view.PrescriptionVisibilityTest',
         'GenPres.test.util.ASyncEventManagerTest' */
     ]
 });

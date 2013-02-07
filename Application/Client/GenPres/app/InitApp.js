@@ -16,7 +16,7 @@ Ext.Loader.setConfig({
 
 Ext.require([
     'Ext.direct.*'
-]);
+ ]);
 
 Ext.onReady(function () {
     Ext.direct.Manager.addProvider(Ext.app.REMOTING_API);
