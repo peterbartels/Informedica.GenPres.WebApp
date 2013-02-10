@@ -5,7 +5,7 @@ Ext.define('GenPres.view.user.LoginWindow', {
     bodyPadding: 5,
     closable: false,
 
-    requires : ['GenPres.session.PatientSession', 'GenPres.store.PrescriptionStores'],
+    //requires : ['GenPres.session.PatientSession', 'GenPres.store.PrescriptionStores'],
 
     title: 'GenPres Login',
     defaultDatabase: 'Default Database',
@@ -41,7 +41,7 @@ Ext.define('GenPres.view.user.LoginWindow', {
     },
 
     getImagePath: function () {
-        return GenPres.application.appFolder + "/style/images/medicalbanner.jpg";
+        return "Client/GenPres/style/images/logo.png";
     },
 
     getHtmlImage: function () {
@@ -92,7 +92,7 @@ Ext.define('GenPres.view.user.LoginWindow', {
     },
 
     getDatabaseStore: function () {
-        return Ext.create('GenPres.store.database.Database');
+        return '';//Ext.create('GenPres.store.database.Database');
     },
 
     createRegisterDatabaseButton: function () {

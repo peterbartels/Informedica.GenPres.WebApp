@@ -25,6 +25,7 @@ describe("LoginWindow", function() {
     it('Login window should have a login button', function () {
         expect(GetLoginWindow().query('toolbar button[action=login]').length).toBe(1);
     });
+    
     it('Login window login button should call controller validateLogin', function () {
 
         var controller = GenPres.application.getController("GenPres.controller.user.LoginController");
