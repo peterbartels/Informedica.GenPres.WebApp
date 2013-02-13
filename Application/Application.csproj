@@ -39,8 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ext.Direct.Mvc">
-      <HintPath>..\..\ext-direct-mvc\src\Ext.Direct.Mvc\bin\Debug\Ext.Direct.Mvc.dll</HintPath>
+    <Reference Include="Ext.Direct.Mvc, Version=3.0.1.0, Culture=neutral, PublicKeyToken=2ec707a789ea209b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ext-direct-mvc\Ext.Direct.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
