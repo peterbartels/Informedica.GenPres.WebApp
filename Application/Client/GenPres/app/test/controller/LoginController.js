@@ -1,12 +1,12 @@
-﻿describe("Application", function() {
-
+﻿/*describe("Application", function() {
+    
     it('Controller validateLogin should call validateLoginForm', function () {
         var controller = GenPres.application.getController("GenPres.controller.user.LoginController");
         spyOn(controller, 'validateLoginForm');
         controller.validateLogin({username:"", password:""});
         expect(controller.validateLoginForm).toHaveBeenCalled();
     });
-
+    
     it('Controller validateLogin should call a backend login function', function () {
         var controller = GenPres.application.getController("GenPres.controller.user.LoginController");
         spyOn(controller, 'loginCallBackFunction');
@@ -48,6 +48,6 @@
         var validated = controller.validateLoginForm({username:"test", password:"test"});
         expect(validated).toBe(false);
     });
-});
+});*/
 
 

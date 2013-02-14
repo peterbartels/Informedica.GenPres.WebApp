@@ -259,6 +259,7 @@
     <Content Include="Client\GenPres\app\style\images\prescription_32.png" />
     <Content Include="Client\GenPres\app\style\images\template_32.png" />
     <Content Include="Client\GenPres\app\style\images\tpn_32.png" />
+    <Content Include="Client\GenPres\app\test\controller\LoginController.js" />
     <Content Include="Client\GenPres\app\test\controller\LoginControllerTests.js" />
     <Content Include="Client\GenPres\app\test\control\UnitValueFieldTest.js" />
     <Content Include="Client\GenPres\app\test\extjs\ClassTests.js" />
@@ -1725,6 +1726,8 @@
     <Content Include="Client\Library\extjs\resources\themes\images\neptune\valid.gif" />
     <Content Include="Client\Library\extjs\resources\themes\images\neptune\WYSIWYG.png" />
     <Content Include="Client\Library\extjs\resources\themes\stylesheets\neptune\default\accessories\readme.txt" />
+    <Content Include="Client\Library\jasmine\jasmine.console_reporter.js" />
+    <Content Include="Client\Library\jasmine\jasmine.teamcity_reporter.js" />
     <Content Include="Client\Library\jasmine\lib\jasmine-1.0.2\jasmine-html.js" />
     <Content Include="Client\Library\jasmine\lib\jasmine-1.0.2\jasmine.css" />
     <Content Include="Client\Library\jasmine\lib\jasmine-1.0.2\jasmine.js" />

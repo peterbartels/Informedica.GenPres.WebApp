@@ -1,6 +1,6 @@
 Ext.define('GenPres.test.TestList', {
     tests: [
-        'GenPres.test.controller.LoginController'
+        'GenPres.test.controller.LoginControllerTests'
         /*'GenPres.test.extjs.ClassTests',
         'GenPres.test.extjs.ComponentQueryTests',
         'GenPres.test.extjs.LoaderTests',

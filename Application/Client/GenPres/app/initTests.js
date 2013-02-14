@@ -33,8 +33,11 @@ Ext.onReady(function () {
                 layout: 'fit'
             });
 
-            testLoader.loadTests(testList);
+            GenPres.application = this;
 
+            testLoader.loadTests(testList);
+            
+            jasmine.getEnv().addReporter(new jasmine.TeamcityReporter());
             jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
             jasmine.Queue(jasmine.getEnv());
             jasmine.getEnv().execute();

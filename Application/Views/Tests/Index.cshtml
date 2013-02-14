@@ -13,10 +13,12 @@ Unit Tests
 @section Javascript
 {
         <script type="text/javascript" src="@Url.Content("~/Client/Library/jasmine/lib/jasmine-1.0.2/jasmine.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Client/Library/jasmine/lib/jasmine-1.0.2/jasmine-html.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Client/Library/jasmine/lib/jasmine-1.0.2/jasmine-html.js")"></script>
+
 
         <script type="text/javascript" src="@Url.Content("~/Client/Library/ext-all-debug.js")"></script>
         <script type="text/javascript" src="@Url.Content("~/DirectApi")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Client/Library/jasmine/jasmine.teamcity_reporter.js")"></script>
        
         <script>
             Ext.direct.Manager.addProvider(Ext.app.REMOTING_API);
