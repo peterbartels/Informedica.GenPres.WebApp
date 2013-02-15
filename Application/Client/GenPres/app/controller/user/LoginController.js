@@ -12,11 +12,11 @@ Ext.define('GenPres.controller.user.LoginController', {
                 click: this.loginClickEvent
             },
             'dataview' : {
-                itemclick : function(view, record, item, index, event){
+                itemclick : function(view, record, item, index, event) {
                     GenPres.session.PatientSession.setLogicalUnit(
                         record.data.id,
                         record.data.text
-                    )
+                    );
                 }
             }
         });
