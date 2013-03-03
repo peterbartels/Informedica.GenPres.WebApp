@@ -50,6 +50,7 @@ Ext.define('GenPres.controller.user.Login', {
     },
 
     onClickValidateLogin: function(button) {
+        console.log("test");
         var win, form, vals;
         controller3 = this;
         win = button.up('window');
