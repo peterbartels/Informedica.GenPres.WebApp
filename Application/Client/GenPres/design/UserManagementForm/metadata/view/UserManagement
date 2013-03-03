@@ -1,0 +1,62 @@
+{
+    "type": "gridpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "UserManagement",
+        "height": 799,
+        "width": 770,
+        "title": "Users"
+    },
+    "id": "ExtBox1-ext-gen9037",
+    "designerId": "2fb56256-a0a9-4fdf-88e0-63788d29cce2",
+    "cn": [
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn",
+                "width": 171,
+                "dataIndex": "string",
+                "emptyCellText": "Please fill in a username",
+                "text": "Username"
+            },
+            "designerId": "22a27291-bacd-4766-9901-6cabb3f5edeb"
+        },
+        {
+            "type": "numbercolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyNumberColumn",
+                "width": 299,
+                "dataIndex": "number",
+                "emptyCellText": "Please fill in a password",
+                "text": "Password"
+            },
+            "designerId": "3cebcc79-2cd6-48f7-b080-c047977b3338"
+        },
+        {
+            "type": "gridview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridView"
+            },
+            "designerId": "977f23d7-03df-4d34-9fd7-fd30af2354ba"
+        }
+    ]
+}

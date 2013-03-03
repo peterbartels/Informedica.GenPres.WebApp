@@ -1,0 +1,47 @@
+{
+    "name": "UserManagementForm",
+    "settings": {
+        "urlPrefix": "",
+        "spacesToIndent": 4,
+        "exportPath": "",
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false
+    },
+    "xdsVersion": "2.1.0",
+    "xdsBuild": 678,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000498,
+    "framework": "ext41",
+    "topInstanceFileMap": {
+        "2fb56256-a0a9-4fdf-88e0-63788d29cce2": {
+            "paths": [
+                "metadata/view/UserManagement",
+                "app/view/override/UserManagement.js",
+                "app/view/UserManagement.js"
+            ],
+            "className": "UserManagement"
+        },
+        "48f2f0ed-8d05-4105-96dd-82472d1f4d7e": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "2fb56256-a0a9-4fdf-88e0-63788d29cce2"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "48f2f0ed-8d05-4105-96dd-82472d1f4d7e"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
