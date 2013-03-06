@@ -7,5 +7,10 @@ Ext.define('GenPres.model.patient.LogicalUnitModel', {
         { name: 'id', type: 'float' },
         { name: 'text', type: 'string' },
         { name: 'leaf', type: 'boolean' }
-    ]
+    ],
+
+    proxy: {
+        type: 'direct',
+        directFn: Login.GetLogicalUnits
+    }
 });

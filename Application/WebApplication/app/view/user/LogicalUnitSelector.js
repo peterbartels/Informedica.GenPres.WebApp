@@ -1,18 +1,22 @@
 Ext.define('GenPres.view.user.LogicalUnitSelector', {
     extend: 'Ext.view.View',
 
+    requires: ['GenPres.store.patient.LogicalUnitStore'],
+
     alias: 'widget.logicalunitselector',
 
     margin:'20 0 0 16',
 
     itemSelector: 'div.LogicalUnitDataViewItem',
 
-    emptyText: 'No images available',
+    emptyText: 'No logical units found',
 
     singleSelect: true,
 
-    store : 'patient.LogicalUnitStore',
+    autoScroll: true,
 
+    store: Ext.create('GenPres.store.patient.LogicalUnitStore'),
+    
     tpl: new Ext.XTemplate(
             '<tpl for="."><div class="LogicalUnitDataView">',
                 '<div class="LogicalUnitDataViewItem">',
@@ -23,5 +27,7 @@ Ext.define('GenPres.view.user.LogicalUnitSelector', {
     initComponent : function(){
         var me = this;
         me.callParent();
+        qqq = me;
+        
     }
 });

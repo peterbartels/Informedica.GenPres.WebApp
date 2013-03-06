@@ -5,7 +5,11 @@ Ext.define('GenPres.view.user.LoginWindow', {
     bodyPadding: 5,
     closable: false,
 
-    //requires : ['GenPres.session.PatientSession', 'GenPres.store.PrescriptionStores'],
+    requires: ['GenPres.util.Process'],
+
+    mixins: {
+        process: 'GenPres.util.Process'
+    },
 
     title: 'GenPres Login',
     defaultDatabase: 'Default Database',
@@ -15,6 +19,15 @@ Ext.define('GenPres.view.user.LoginWindow', {
         me.dockedItems = me.createDockedItems();
         me.items = this.createItems();
         me.callParent(arguments);
+    },
+
+    Processes : {
+        'Login' : [
+            {component:'form', text:'Dit formulier kan gebruikt worden om in te loggen.'},
+            {component:'form textfield[name=username]', text:'Vul uw gebruikersnaam in.'},
+            {component:'form textfield[name=password]', text:'Vul uw wachtwoord in.'},
+            {component:'toolbar button[action=login]', text:'Klik op de login button om de applicatie te starten.'}
+        ]
     },
 
     getLoginButton: function () {
@@ -38,6 +51,11 @@ Ext.define('GenPres.view.user.LoginWindow', {
             me.getHtmlImage(),
             me.getLoginForm2()
         ];
+    },
+
+    afterRender: function () {
+        this.callParent(arguments);
+        this.doProcess('Login');
     },
 
     getImagePath: function () {

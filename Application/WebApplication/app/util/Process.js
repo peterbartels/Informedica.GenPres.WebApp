@@ -7,16 +7,19 @@ Ext.define('GenPres.util.Process', {
 
         Ext.apply(me, config);
         
-        me.spot = Ext.create('GenPres.util.Spotlight', {
-            easing: 'easeOut',
-            duration: 300
-        });
-
+        
     },
 
     doProcess:function(name){
         var me = this;
 
+        if (typeof (me.spot) == "undefined") {
+            me.spot = Ext.create('GenPres.util.Spotlight', {
+                easing: 'easeOut',
+                duration: 300
+            });
+        }
+        
         me.name = name;
         
         var component;
