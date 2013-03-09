@@ -10,8 +10,10 @@ namespace Informedica.GenPres.WebApp.Controllers
 {
     public class LoginController : DirectController
     {
-        //
-        // GET: /Login/
+        public ActionResult Authenticate(string username, string password)
+        {
+            return Json(new {success = true});
+        }
 
         public ActionResult  GetLogicalUnits()
         {
@@ -48,6 +50,5 @@ namespace Informedica.GenPres.WebApp.Controllers
 
             return Json(array);
         }
-
     }
 }

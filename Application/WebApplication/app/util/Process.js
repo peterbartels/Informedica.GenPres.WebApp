@@ -2,14 +2,6 @@ Ext.define('GenPres.util.Process', {
 
     currentProcessNr : 0,
 
-    constructor: function(config) {
-        var me = this;
-
-        Ext.apply(me, config);
-        
-        
-    },
-
     doProcess:function(name){
         var me = this;
 
@@ -55,7 +47,7 @@ Ext.define('GenPres.util.Process', {
                 baseCls:'none',
                 dock: 'bottom',
                 items: ['->', new Ext.Button({
-                    text: 'Volgende',
+                    text: 'Next',
                     hidden:(me.currentProcessNr == (process.length - 1) ),
                     handler:me.processNext,
                     scope:me
@@ -71,6 +63,7 @@ Ext.define('GenPres.util.Process', {
 
         var setZIndex = Ext.Function.createDelayed(function(){
             me.tooltip.el.dom.style.zIndex = 222001;
+            //me.tooltip.el.ddom.style.padding = "20";
         }, 50);
 
         me.tooltip.show();

@@ -52,7 +52,6 @@ Ext.define('GenPres.controller.user.Login', {
 
     onClickValidateLogin: function(button) {
         var win, form, vals;
-        controller3 = this;
         win = button.up('window');
         this.loginWindow = win;
         form = win.down('form');
@@ -62,7 +61,7 @@ Ext.define('GenPres.controller.user.Login', {
 
     validateLogin: function(vals) {
         if(this.validateLoginForm(vals)){
-            User.Login(vals.username, vals.password, this.loginCallBackFunction, this);
+            Login.Authenticate(vals.username, vals.password, this.loginCallBackFunction, this);
         }
     },
 

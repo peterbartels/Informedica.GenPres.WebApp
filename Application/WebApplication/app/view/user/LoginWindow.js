@@ -55,7 +55,7 @@ Ext.define('GenPres.view.user.LoginWindow', {
 
     afterRender: function () {
         this.callParent(arguments);
-        this.doProcess('Login');
+        //Ext.Function.defer(this.doProcess, 500, this, ['Login']);
     },
 
     getImagePath: function () {

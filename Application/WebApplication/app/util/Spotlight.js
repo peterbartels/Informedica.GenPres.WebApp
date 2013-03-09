@@ -110,7 +110,17 @@ Ext.define('GenPres.util.Spotlight', {
     applyBounds: function(animate, reverse) {
         var me = this,
             box = me.el.getBox();
-
+        /*
+        box.x = box.x - 2;
+        box.y = box.y - 1;
+        box.right = box.right - 2;
+        box.bottom = box.bottom - 2;
+        box.left = box.left - 2;
+        box.top = box.top - 2;
+        box.width = box.width + 2;
+        box.height = box.height + 2;\
+        */
+        //console.log(box);
         //get the current view width and height
         var viewWidth = Ext.core.Element.getViewWidth(true);
         var viewHeight = Ext.core.Element.getViewHeight(true);
@@ -171,7 +181,7 @@ Ext.define('GenPres.util.Spotlight', {
                 x: 0,
                 y: (box.y + box.height),
                 width: (box.x + box.width) + 'px',
-                height: (viewHeight - (box.y + box.height)) + 'px'
+                height: (viewHeight - (box.y + box.height) + 1) + 'px'
             }
         };
 
