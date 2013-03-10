@@ -23,8 +23,8 @@ General setup for all GenPres sites:
     <title>@ViewBag.Title</title>
 
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/WebApplication/resources/ext-theme-neptune/ext-theme-neptune-all.css")" />
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Client/GenPres/style/css/GenPres.css")" />
-
+    <!--<link rel="stylesheet" type="text/css" href="@Url.Content("~/Client/GenPres/style/css/GenPres.css")" />
+        -->
     @RenderSection("CSS", false)
 
     <script type="text/javascript">
@@ -32,8 +32,18 @@ General setup for all GenPres sites:
         Ext.app = {};
     </script>    
     
-    @RenderSection("Javascript", false)
+    <script src="~/WebApplication/ext/ext-all-dev.js"></script>
+    <script src="~/WebApplication/bootstrap.js"></script>
 
+    <script type="text/javascript" src="@Url.Content("~/DirectApi")"></script>
+       
+    <script>
+        Ext.direct.Manager.addProvider(Ext.app.REMOTING_API);
+    </script>
+    
+    @RenderSection("Javascript", false)
+    
+    
 </head>
 <body>
     @RenderBody()

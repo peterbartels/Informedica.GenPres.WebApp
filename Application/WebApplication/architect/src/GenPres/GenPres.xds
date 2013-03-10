@@ -1,0 +1,87 @@
+{
+    "name": "GenPres",
+    "settings": {
+        "urlPrefix": "",
+        "spacesToIndent": 4,
+        "exportPath": "C:/Development/Informedica.GenPres.WebApp/Application/WebApplication/architect/pulished",
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false
+    },
+    "xdsVersion": "2.1.0",
+    "xdsBuild": 678,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000498,
+    "framework": "ext41",
+    "topInstanceFileMap": {
+        "066676d8-2f2c-4073-b6dd-6d233aa7e965": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "b9800c63-32f3-4c9b-88df-00fab086a4db": {
+            "paths": [
+                "metadata/view/UserGrid",
+                "app/view/override/UserGrid.js",
+                "app/view/UserGrid.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "UserGrid"
+        },
+        "4b209b10-1ba4-4e46-ac01-b65bc8cc506a": {
+            "paths": [
+                "metadata/view/UserForm",
+                "app/view/override/UserForm.js",
+                "app/view/UserForm.js"
+            ],
+            "className": "UserForm"
+        },
+        "4bbcd5ed-bd8f-451f-9a59-da299ea4fc41": {
+            "paths": [
+                "metadata/store/UserStore",
+                "app/store/override/UserStore.js",
+                "app/store/UserStore.js"
+            ],
+            "className": "UserStore"
+        },
+        "610aacd4-c526-463f-bf18-ffe7239c0e92": {
+            "paths": [
+                "metadata/controller/UserEditingController",
+                "app/controller/override/UserEditingController.js",
+                "app/controller/UserEditingController.js"
+            ],
+            "className": "UserEditingController"
+        },
+        "05ab41bb-cbd3-4a20-85fd-4f6ea38f9940": {
+            "paths": [
+                "metadata/model/UserModel",
+                "app/model/override/UserModel.js",
+                "app/model/UserModel.js"
+            ],
+            "className": "UserModel"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "b9800c63-32f3-4c9b-88df-00fab086a4db",
+            "4b209b10-1ba4-4e46-ac01-b65bc8cc506a"
+        ],
+        "store": [
+            "4bbcd5ed-bd8f-451f-9a59-da299ea4fc41"
+        ],
+        "controller": [
+            "610aacd4-c526-463f-bf18-ffe7239c0e92"
+        ],
+        "model": [
+            "05ab41bb-cbd3-4a20-85fd-4f6ea38f9940"
+        ],
+        "resource": [
+            "066676d8-2f2c-4073-b6dd-6d233aa7e965"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

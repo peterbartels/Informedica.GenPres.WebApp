@@ -1,0 +1,22 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "UserEditingController",
+        "models": [
+            "UserModel"
+        ],
+        "stores": [
+            "UserStore"
+        ],
+        "views": [
+            "UserGrid"
+        ]
+    },
+    "id": "ExtBox1-ext-gen22831",
+    "designerId": "610aacd4-c526-463f-bf18-ffe7239c0e92"
+}
