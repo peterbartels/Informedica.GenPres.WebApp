@@ -20,7 +20,9 @@ Ext.define('GenPres.view.UserGrid', {
     width: 410,
     title: 'Users',
     store: 'UserStore',
-
+    requires: [
+        'GenPres.store.UserStore'
+    ],
     initComponent: function() {
         var me = this;
 
@@ -45,7 +47,7 @@ Ext.define('GenPres.view.UserGrid', {
                         xtype: 'textfield',
                         allowBlank: false
                     }
-                }
+                 }
             ],
             selType: 'rowmodel',
             plugins: [

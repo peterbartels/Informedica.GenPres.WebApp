@@ -6,6 +6,9 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Autofac;
+using Autofac.Integration.Mvc;
+using Informedica.Service.Presentation;
 
 namespace Informedica.GenPres.WebApp
 {
@@ -22,6 +25,13 @@ namespace Informedica.GenPres.WebApp
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             AuthConfig.RegisterAuth();
+
+            var builder = GenPres.Application.IoC.MvcApplication.GetIoCBuilder();
+            builder.RegisterType<UserManagement>().As<IUserManagement>().InstancePerHttpRequest();
+            builder.RegisterControllers(typeof(MvcApplication).Assembly);
+
+            var container = builder.Build();
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }
     }
 }

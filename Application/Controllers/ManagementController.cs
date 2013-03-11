@@ -5,11 +5,19 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Ext.Direct.Mvc;
+using Informedica.Service.Presentation;
 
 namespace Informedica.GenPres.WebApp.Controllers
 {
     public class ManagementController : DirectController
     {
+        public IUserManagement UserManagementService { get; set; }
+
+        public ManagementController(IUserManagement userManagement)
+        {
+            UserManagementService = userManagement;
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -17,26 +25,13 @@ namespace Informedica.GenPres.WebApp.Controllers
 
         public ActionResult GetUsers()
         {
-            return Json(new ArrayList()
-            {
-                new
-                    {
-                        username = "peter",
-                        password = "test",
-                        id = "test"
-                    }
-            });
+            return Json(UserManagementService.GetUsers())   ;
         }
 
         public ActionResult SaveUser(UserDto user)
         {
-            return Json(new {success = user.username});
+            UserManagementService.AddUser(user);
+            return Json(new {success = user.Username});
         }
     }
-
-    public class UserDto
-    {
-        public string username { get; set; }
-        public string password { get; set; }
-    }
-}
+}   

@@ -16,16 +16,20 @@
 Ext.define('GenPres.view.Viewport', {
 
     extend: 'Ext.Viewport',
+
     
     layout: 'fit',
     
-    items: {
+    items: [
+    {
         margins: '20 20 20 20',
-        tbar: [
+        tbar:
+        [
+            { html: '<img src="../Client/GenPres/style/images/logo.png" />', height: 180, xtype: 'box' },
             {
                 text: 'Users',
                 scale: 'large',
-                handler: Ext.bind(function(a,b,c,d) {
+                handler: Ext.bind(function(a, b, c, d) {
                     debugger;
                 }, this)
             }, {
@@ -35,8 +39,10 @@ Ext.define('GenPres.view.Viewport', {
                 text: 'Patients',
                 scale: 'large'
             }
-        ]
-    },
+        ],
+    }, {    
+    }
+    ],
     
     renderTo: Ext.getBody()
 });
