@@ -246,6 +246,7 @@
     <Content Include="WebApplication\app\store\prescription\SubstanceUnit.js" />
     <Content Include="WebApplication\app\store\prescription\TotalTimeUnit.js" />
     <Content Include="WebApplication\app\store\prescription\ValueStore.js" />
+    <Content Include="WebApplication\app\util\ModelLoader.js" />
     <Content Include="WebApplication\app\util\Process.js" />
     <Content Include="WebApplication\app\util\Spotlight.js" />
     <Content Include="WebApplication\app\view\Main.js" />
