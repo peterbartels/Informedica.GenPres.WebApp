@@ -30,7 +30,7 @@ Ext.application({
         GenPres.application = me;
         
         //GenPres.ASyncEventManager = GenPres.lib.util.ASyncEventManager;
-        GenPres.util.ModelLoader.Load(Ext.app.REMOTE_MODELS)
+        GenPres.util.ModelLoader.Load(Ext.app.REMOTE_MODELS);
         me.setDefaults();
 
         this.viewport = Ext.create('Ext.container.Viewport', {

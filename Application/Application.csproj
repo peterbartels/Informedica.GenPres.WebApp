@@ -249,6 +249,7 @@
     <Content Include="WebApplication\app\util\ModelLoader.js" />
     <Content Include="WebApplication\app\util\Process.js" />
     <Content Include="WebApplication\app\util\Spotlight.js" />
+    <Content Include="WebApplication\app\util\StoreManager.js" />
     <Content Include="WebApplication\app\view\Main.js" />
     <Content Include="WebApplication\app\view\main\MainView.js" />
     <Content Include="WebApplication\app\view\main\MainViewCenter.js" />
