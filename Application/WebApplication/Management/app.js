@@ -16,15 +16,26 @@
 Ext.Loader.setConfig({
     enabled: true
 });
+Ext.application({
+    name: 'GenPres',
+
+    appFolder: './WebApplication/app',
+
+    requires: [],
+
+    models: [
+        'GenPres.util.ModelLoader'
+    ]
+});
 
 Ext.application({
     views: [
     ],
 
     appFolder: '../WebApplication/Management/app/',
-    
+        
     autoCreateViewport: true,
-    name: 'GenPres',
+    name: 'Management',
     controllers: [
         'UserEditingController'
     ]

@@ -179,6 +179,7 @@
   <ItemGroup>
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RavenConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AppTestController.cs" />

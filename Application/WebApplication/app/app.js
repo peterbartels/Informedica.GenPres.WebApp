@@ -1,21 +1,24 @@
-
-//@require @packageOverrides
-
+Ext.Loader.setConfig({
+    disableCaching: false,
+    enabled: true,
+    paths: {
+        GenPres: './WebApplication/app'
+    }
+});
 Ext.application({
 
     name: 'GenPres',
 
     appFolder: './WebApplication/app',
     
-    requires: [],
+    requires: ['GenPres.util.ModelLoader'],
 
     models: [
-        'GenPres.util.ModelLoader'
+        
     ],
 	
     views: [
-        'Main',
-        'Viewport'
+    
     ],
 	
     stores: [
