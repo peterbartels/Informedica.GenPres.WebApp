@@ -1,0 +1,1 @@
+sencha -sdk C:\Development\Libraries\extjs\ext-4.2.0.265 compile -debug -classpath=./GenPres page -yui -in GenPres.html -out test.html

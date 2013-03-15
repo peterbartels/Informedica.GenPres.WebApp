@@ -1,0 +1,2 @@
+REM sencha -sdk C:\Development\Libraries\ext-4.2.0.489-beta generate app GenPres c:\Development\GitHub\Informedica.GenPres.WebApp\Application\WebApplication\
+REM sencha -sdk C:\Development\Libraries\ext-4.2.0.489-beta compile -debug -classpath=./app page -yui -in index.html -out test.html
