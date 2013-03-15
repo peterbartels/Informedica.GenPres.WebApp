@@ -22,7 +22,7 @@ General setup for all GenPres sites:
 <head>
     <title>@ViewBag.Title</title>
 
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/WebApplication/resources/ext-theme-neptune/ext-theme-neptune-all.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/ClientApplications/Styles/ext-theme-neptune/ext-theme-neptune-all.css")" />
     <!--<link rel="stylesheet" type="text/css" href="@Url.Content("~/Client/GenPres/style/css/GenPres.css")" />
         -->
     @RenderSection("CSS", false)
@@ -32,8 +32,8 @@ General setup for all GenPres sites:
         Ext.app = {};
     </script>    
     
-    <script src="~/WebApplication/ext/ext-all-dev.js"></script>
-    <script src="~/WebApplication/bootstrap.js"></script>
+    <script src="~/ClientApplications/Ext/ext-all-dev.js"></script>
+    <script src="~/ClientApplications/bootstrap.js"></script>
 
     <script type="text/javascript" src="@Url.Content("~/DirectApi")"></script>
     <script type="text/javascript" src="@Url.Content("~/DirectModel")"></script>
