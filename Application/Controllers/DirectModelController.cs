@@ -18,8 +18,6 @@ namespace Informedica.GenPres.WebApp.Controllers
         {
             var userDto = new Informedica.Service.Presentation.UserDto();
 
-            string @namespace = "";
-
             var types = userDto.GetType().Assembly.GetTypes()
                 .Where(t => t.IsClass)
                 .ToList();

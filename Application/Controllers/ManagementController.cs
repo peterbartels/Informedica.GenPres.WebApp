@@ -28,10 +28,16 @@ namespace Informedica.GenPres.WebApp.Controllers
             return Json(UserManagementService.GetUsers())   ;
         }
 
+        public ActionResult DeleteUser(UserDto user)
+        {
+            UserManagementService.DeleteUser(user);
+            return Json(new { success = true });
+        }
+
         public ActionResult SaveUser(UserDto user)
         {
             UserManagementService.AddUser(user);
-            return Json(new {success = user.Username});
+            return Json(new {success = true});
         }
     }
 }   

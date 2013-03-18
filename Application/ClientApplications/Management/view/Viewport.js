@@ -3,29 +3,34 @@ Ext.define('Management.view.Viewport', {
 
     extend: 'Ext.Viewport',
 
-    layout: 'fit',
+    layout: 'border',
     
+		
     items: [
-    {
-        margins: '20 20 20 20',
-        tbar:
-        [
-            { html: '<img src="../ClientApplications/Styles/GenPres/images/logo.png" />', xtype: 'box', width:200 },
-            {
-                text: 'Users',
-                scale: 'large',
-                handler: Ext.bind(function(a, b, c, d) {
-                    
-                }, this)
-            }, {
-                text: 'Logical units',
-                scale: 'large'
-            }, {
-                text: 'Patients',
-                scale: 'large'
-            }
-        ]
-    }],
-    
+	{	region:'north',
+		height:50,
+		tbar:
+		[
+			{html: '<img src="../ClientApplications/Styles/GenPres/images/logo.png" />', height:40, width:200, xtype:'box'},
+			{
+				text: 'Users',
+				action:'users',
+				scale: 'large'
+			}, {
+				text: 'Logical units',
+				action: 'logical_units',
+				scale: 'large'
+			}, {
+				text: 'Patients',
+				action: 'patients',
+				scale: 'large'
+			}
+		]
+	},{	
+		region:'center',
+		layout: 'fit',
+		margin:'20 20 20 20'
+	}],
+	
     renderTo: Ext.getBody()
 });

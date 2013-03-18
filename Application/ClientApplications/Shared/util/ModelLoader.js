@@ -22,3 +22,5 @@
         }
     }
 })
+
+Shared.util.ModelLoader.Load(Ext.app.REMOTE_MODELS);
