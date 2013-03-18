@@ -1,0 +1,105 @@
+﻿.x-panel-header .x-component {
+  text-align:right !important;
+}
+
+.x-panel-header .x-panel-header-text{
+    padding-right:15px;
+}
+
+.x-panel-header {
+    padding:0px;
+    height:0px; 
+}
+
+#card-prescriptionForm .x-panel-body {
+    background-color: transparent;
+}
+
+.presriptionFormCategory {
+    background-color: #f3f0f0 !important;
+    background-image: url("../images/gradient_panel_bg.gif") !important;
+    background-repeat: repeat-x !important;
+}
+
+.PatientInfoView .x-btn-group-body {
+    background-color:red !important;
+}
+
+body {
+	overflow: hidden;
+}
+
+.x-spotlight {
+    background-color: #ccc;
+    z-index: 19889;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -moz-opacity: 0.5;
+    opacity: .50;
+    filter: alpha(opacity=50);
+    width: 0;
+    height: 0;
+    zoom: 1;
+}
+
+.LogicalUnitDataViewItem 
+{
+	background-image:url(../images/check_icon_disabled.png);
+	float:left;
+	margin-right:20px;
+	height:30px;
+	padding-left:25px;
+	padding-top:8px;
+	background-repeat:no-repeat;
+	text-align:center;
+	color:#5b5b5b;
+}
+
+.LogicalUnitDataViewItem:hover
+{
+	cursor:pointer;
+	background-image:url(../images/check_icon_enabled.png);
+}
+
+.LogicalUnitDataView div.x-item-selected
+{
+	background-image:url(../images/check_icon_enabled.png);
+	color:#3b7844;
+}
+
+.patientNameInfo {
+	width:200px;
+    margin-top:2px;
+	float:left;
+    font-size:10px;
+}
+
+.patientInfoHeader {
+	width:400px;
+	float:left;
+
+}
+.patientInfoValue{
+    font-size:10px;
+    width:400px;
+}
+.patientIcon {
+	background-image: url(../images/patient.png);
+	background-repeat: no-repeat;
+	float:left;
+	width:60px;
+    margin-left:5px;
+	height:58px;
+}
+
+.PatientInfoPid {
+    padding-top:46px;
+    font-weight:bold;
+}
+
+.x-form-item-label {
+    font-size:11px;
+    font-weighh:bold;
+    backgroung-color:gray;
+}

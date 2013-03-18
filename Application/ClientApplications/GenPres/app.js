@@ -6,8 +6,12 @@ Ext.application({
 
     models:[
     ],
-
-appFolder : './ClientApplications/GenPres',
+	
+	paths : {
+        'GenPres' : './ClientApplications/GenPres'
+    },
+	
+	appFolder : './ClientApplications/GenPres',
 
     views: [
         'Main',

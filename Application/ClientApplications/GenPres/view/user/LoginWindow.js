@@ -59,7 +59,7 @@ Ext.define('GenPres.view.user.LoginWindow', {
     },
 
     getImagePath: function () {
-        return "Client/GenPres/style/images/logo.png";
+        return "ClientApplications/Styles/GenPres/Images/MedicalBanner.jpg";
     },
 
     getHtmlImage: function () {

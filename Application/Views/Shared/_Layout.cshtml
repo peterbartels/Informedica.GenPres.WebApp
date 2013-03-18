@@ -22,28 +22,26 @@ General setup for all GenPres sites:
 <head>
     <title>@ViewBag.Title</title>
 
+    
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/ClientApplications/Styles/ext-theme-neptune/ext-theme-neptune-all.css")" />
-    <!--<link rel="stylesheet" type="text/css" href="@Url.Content("~/Client/GenPres/style/css/GenPres.css")" />
-        -->
-    @RenderSection("CSS", false)
-
-    <script type="text/javascript">
-        Ext = {};
-        Ext.app = {};
-    </script>    
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/ClientApplications/Styles/GenPres/css/GenPres.css")" /> 
+    <link rel="stylesheet" href="~/ClientApplications/bootstrap.css">
     
-    <script src="~/ClientApplications/Ext/ext-all-dev.js"></script>
-    <script src="~/ClientApplications/bootstrap.js"></script>
+    @if (Request.Params["debug"] != null)
+    {
+        <script src="~/ClientApplications/Ext/ext-all-dev.js"></script>
+        
+        <script type="text/javascript" src="@Url.Content("~/DirectApi")"></script>
+        <script type="text/javascript" src="@Url.Content("~/DirectModel")"></script>
+        
+        <script src="~/ClientApplications/bootstrap.js"></script>
 
-    <script type="text/javascript" src="@Url.Content("~/DirectApi")"></script>
-    <script type="text/javascript" src="@Url.Content("~/DirectModel")"></script>
+        <script>
+            Ext.direct.Manager.addProvider(Ext.app.REMOTING_API);
+        </script>
        
-    <script>
-        Ext.direct.Manager.addProvider(Ext.app.REMOTING_API);
-    </script>
-    
+    }
     @RenderSection("Javascript", false)
-    
     
 </head>
 <body>

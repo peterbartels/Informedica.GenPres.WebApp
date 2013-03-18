@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('GenPres.view.UserGrid', {
+Ext.define('Management.view.UserGrid', {
     extend: 'Ext.grid.Panel',
 
     height: 294,
@@ -21,7 +21,7 @@ Ext.define('GenPres.view.UserGrid', {
     title: 'Users',
     store: 'UserStore',
     requires: [
-        'GenPres.store.UserStore'
+        'Management.store.UserStore'
     ],
     initComponent: function() {
         var me = this;

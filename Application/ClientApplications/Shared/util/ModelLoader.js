@@ -1,4 +1,4 @@
-﻿Ext.define('GenPres.util.ModelLoader', {
+﻿Ext.define('Shared.util.ModelLoader', {
 
     singleton: true,
 

@@ -4,7 +4,12 @@
 
 @section Javascript
 {
-       <link rel="stylesheet" href="~/WebApplication/bootstrap.css">
-        
-       <script src="~/WebApplication/Management/app.js"></script>
+    @if (Request.Params["debug"] != null)
+    {
+        <script src="~/ClientApplications/Management/app.js"></script>
+    }
+    else
+    {
+        <script src="~/ClientApplications/Management/all-classes.js"></script>
+    }
 }

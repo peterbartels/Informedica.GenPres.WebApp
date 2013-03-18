@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('GenPres.model.UserModel', {
+Ext.define('Management.model.UserModel', {
     extend: 'Ext.data.Model',
 
     fields: [
