@@ -1,8 +1,6 @@
 Ext.define('Management.controller.UserEditingController', {
     extend: 'Ext.app.Controller',
 
-    models:['Management.model.UserModel'],
-
     refs: [
         {
             ref: 'UserGrid',
@@ -12,13 +10,13 @@ Ext.define('Management.controller.UserEditingController', {
 
     init: function() {
         this.control({
-            'button[action=new]': {
+            'usergrid button[action=new]': {
                 click: this.newUser
             },
-            'button[text=Delete]': {
+            'usergrid button[text=Delete]': {
                 click: this.deleteUser
             },
-            'grid': {
+            'usergrid': {
                 canceledit: this.cancelEdit,
                 edit:this.commitRecord
             }

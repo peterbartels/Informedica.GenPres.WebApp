@@ -5,50 +5,27 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Ext.Direct.Mvc;
+using Informedica.Service.Presentation;
 
 namespace Informedica.GenPres.WebApp.Controllers
 {
     public class LoginController : DirectController
     {
+        public ILoginService LoginService { get; set; }
+
+        public LoginController(ILoginService loginService)
+        {
+            this.LoginService = loginService;
+        }
+        
         public ActionResult Authenticate(string username, string password)
         {
-            return Json(new {success = true});
+            return Json(new {success = LoginService.AuthenticateUser(username, password)});
         }
 
         public ActionResult  GetLogicalUnits()
         {
-            var array = new ArrayList();
-            array.Add(new
-                {
-                    id = 1,
-                    text = "Department 1"
-                });
-
-            array.Add(new 
-                {
-                    id = 2,
-                    text = "Department 2"
-                });
-
-            array.Add(new
-            {
-                id = 3,
-                text = "Department 3"
-            });
-
-            array.Add(new
-            {
-                id = 4,
-                text = "Department 4"
-            });
-
-            array.Add(new
-            {
-                id = 5,
-                text = "Department 5"
-            });
-
-            return Json(array);
+            return Json(LoginService.GetLogicalUnits());
         }
     }
 }

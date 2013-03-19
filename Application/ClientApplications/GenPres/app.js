@@ -1,4 +1,14 @@
 //@require @packageOverrides
+Ext.require('*');
+
+Ext.Loader.setConfig({
+    enabled: true,
+
+    paths: {
+        Shared: './ClientApplications/Shared',
+        GenPres: './ClientApplications/GenPres'
+    }
+});
 
 Ext.application({
 
@@ -8,14 +18,16 @@ Ext.application({
     ],
 	
 	paths : {
-        'GenPres' : './ClientApplications/GenPres'
-    },
+	    Shared: './ClientApplications/Shared',
+	    GenPres: './ClientApplications/GenPres'
+	},
+
+    requires: ['Ext.grid.plugin.BufferedRendererTreeView', 'Shared.util.StoreManager', 'Shared.util.ModelLoader', 'Ext.data.proxy.Direct'],
 	
 	appFolder : './ClientApplications/GenPres',
 
     views: [
-        'Main',
-        'Viewport'
+        'Main'
     ],
 
     stores: [
@@ -41,13 +53,14 @@ Ext.application({
 
     showLoginWindow: function () {
         var me = this, window;
+        
         window = me.getLoginWindow().show();
-        me.getController('user.Login').setDefaultDatabase(window);
+        //me.getController('user.Login').setDefaultDatabase(window);
     },
 
     getLoginWindow: function () {
         var me = this;
-        return me.getController('user.Login').getLoginWindow();
+        return me.getController('login.Login').getLoginWindow();
     },
 
     setDefaults : function(){

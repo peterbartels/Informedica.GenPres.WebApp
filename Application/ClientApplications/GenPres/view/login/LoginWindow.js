@@ -1,21 +1,26 @@
-Ext.define('GenPres.view.user.LoginWindow', {
+Ext.define('GenPres.view.login.LoginWindow', {
     extend: 'Ext.Window',
     alias: 'widget.userlogin',
 
     bodyPadding: 5,
+
     closable: false,
 
-    requires: ['GenPres.util.Process'],
-
-    mixins: {
-        process: 'GenPres.util.Process'
-    },
-
+    requires: ['Shared.util.Process'],
+    
     title: 'GenPres Login',
+
     defaultDatabase: 'Default Database',
 
     initComponent: function() {
         var me = this;
+
+        Ext.applyIf(me, {
+            mixins: {
+                process: 'Shared.util.Process'
+            }
+        });
+
         me.dockedItems = me.createDockedItems();
         me.items = this.createItems();
         me.callParent(arguments);
@@ -82,7 +87,7 @@ Ext.define('GenPres.view.user.LoginWindow', {
             items:[
                 { xtype: 'textfield', fieldLabel: 'Gebruikersnaam', name:'username', margin: '10 0 10 10', value: 'peter' },
                 { xtype: 'textfield', inputType: 'password', fieldLabel: 'Wachtwoord', name: 'password', margin: '0 0 10 10',  value: 'Secret' },
-                Ext.create('GenPres.view.user.LogicalUnitSelector',{name:'loginLogicalUnitSelector'})
+                Ext.create('GenPres.view.login.LogicalUnitSelector',{name:'loginLogicalUnitSelector'})
             ]
         };
     },

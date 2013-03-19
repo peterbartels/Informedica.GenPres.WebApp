@@ -1,7 +1,5 @@
-Ext.define('GenPres.view.user.LogicalUnitSelector', {
+Ext.define('GenPres.view.login.LogicalUnitSelector', {
     extend: 'Ext.view.View',
-
-    requires: ['GenPres.store.patient.LogicalUnitStore'],
 
     alias: 'widget.logicalunitselector',
 
@@ -15,19 +13,17 @@ Ext.define('GenPres.view.user.LogicalUnitSelector', {
 
     autoScroll: true,
 
-    store: Ext.create('GenPres.store.patient.LogicalUnitStore'),
+    store: Shared.util.StoreManager.GetStore('LogicalUnitDto', Login.GetLogicalUnits, [{property: 'Name',direction: 'ASC'}]),
     
     tpl: new Ext.XTemplate(
             '<tpl for="."><div class="LogicalUnitDataView">',
                 '<div class="LogicalUnitDataViewItem">',
-                    '{text}',
+                    '{Name}',
                 '</div>',
             '</div></tpl>'),
 
     initComponent : function(){
         var me = this;
         me.callParent();
-        qqq = me;
-        
     }
 });

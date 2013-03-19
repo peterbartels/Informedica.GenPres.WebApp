@@ -6,26 +6,30 @@ Ext.define('Shared.util.StoreManager', {
 
     stores: {},
     
-    GetStore : function(name, modelName, directFn){
+    GetStore : function(name, directFn, sorters){
 
         if (typeof (this.stores[name]) == "undefined") {
 
-            var model = Ext.create(modelName);
+            var model = Ext.create(name);
             
             this.stores[name] = Ext.create('Ext.data.Store', {
 
-                model: modelName,
+                model: name,
 
                 autoLoad: true,
 
                 proxy: {
                     type: 'direct',
-                    directFn: Management.GetUsers,
+                    directFn: directFn,
                     reader: {
                         type: 'json'
                     }
-                }
+                },
+
+                sorters: sorters
             });
+            
+            
         }
         return this.stores[name];
     }

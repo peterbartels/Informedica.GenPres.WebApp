@@ -1,11 +1,11 @@
-Ext.define('GenPres.controller.user.Login', {
+Ext.define('GenPres.controller.login.Login', {
     extend: 'Ext.app.Controller',
     alias: 'widget.logincontroller',
 	
 	requires: ['GenPres.session.PatientSession'],
 	
     views: [
-        'user.LoginWindow'
+        'login.LoginWindow'
     ],
 
     loggedIn: false,
@@ -37,7 +37,7 @@ Ext.define('GenPres.controller.user.Login', {
 
     getLoginWindow: function () {
         var me = this, window;
-        window = me.getUserLoginWindowView().create();
+        window = me.getLoginLoginWindowView().create();
         return window;
     },
 

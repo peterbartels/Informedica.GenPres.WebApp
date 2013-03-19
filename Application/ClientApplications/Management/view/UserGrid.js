@@ -1,9 +1,11 @@
 Ext.define('Management.view.UserGrid', {
-    extend: 'Ext.grid.Panel',
+    extend: 'Management.view.EditableModelGrid',
 
     title: 'Users',
 
-    store: Shared.util.StoreManager.GetStore('UserDto', 'UserDto'),
+    alias: ['widget.usergrid'],
+
+    store: Shared.util.StoreManager.GetStore('UserDto', Management.GetUsers),
     
     initComponent: function() {
         var me = this;
@@ -31,34 +33,6 @@ Ext.define('Management.view.UserGrid', {
                         allowBlank: false
                     }
                  }
-            ],
-            selType: 'rowmodel',
-            plugins: [
-                Ext.create('Ext.grid.plugin.RowEditing', {
-                    clicksToEdit: 2,
-                    errorSummary: false
-                })
-            ],
-            viewConfig: {
-
-            },
-            dockedItems: [
-                {
-                    xtype: 'toolbar',
-                    dock: 'top',
-                    items: [
-                        {
-                            xtype: 'button',
-                            action:'new',
-                            text: 'New'
-                        },
-                        {
-                            xtype: 'button',
-                            action: 'remove ',
-                            text: 'Delete'
-                        }
-                    ]
-                }
             ]
         });
 

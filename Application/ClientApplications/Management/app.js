@@ -17,6 +17,12 @@ Ext.application({
         this.control({
             'button[action=users]': {
                 click: this.showUsers
+            },
+            'button[action=logical_units]': {
+                click: this.showLogicalUnits
+            },
+            'button[action=patients]': {
+                click: this.showPatients
             }
         });
     },
@@ -37,11 +43,21 @@ Ext.application({
 	autoCreateViewport: true,
 	
     controllers: [
-        'UserEditingController'
+        'UserEditingController', 'LogicalUnitController', 'PatientController'
     ],
 
     showUsers: function () {
         this.getViewport().remove(1);
         this.getViewport().add(Ext.create('Management.view.UserGrid'));
+    },
+
+    showLogicalUnits: function () {
+        this.getViewport().remove(1);
+        this.getViewport().add(Ext.create('Management.view.LogicalUnitGrid'));
+    },
+
+    showPatients: function () {
+        this.getViewport().remove(1);
+        this.getViewport().add(Ext.create('Management.view.PatientGrid'));
     }
 });

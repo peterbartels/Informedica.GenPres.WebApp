@@ -27,9 +27,9 @@ namespace Informedica.GenPres.WebApp
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             AuthConfig.RegisterAuth();
 
-            var builder = GenPres.Application.IoC.MvcApplication.BuildAcceptanceIoC();
+            var builder = GenPres.Application.IoC.MvcApplication.BuildIoC();
             builder.RegisterModule(new DatabaseAcceptanceContextModule("http://localhost:8080", "GenPres"));
-            builder.RegisterType<UserManagement>().As<IUserManagement>().InstancePerHttpRequest();
+            builder.RegisterType<ManagementService>().As<IMangementService>().InstancePerHttpRequest();
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
 
             var container = builder.Build();

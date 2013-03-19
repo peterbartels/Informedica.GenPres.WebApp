@@ -11,11 +11,6 @@ General setup for all GenPres sites:
     Add style element for the EditableComboBox class
     TODO: generate special genpres.css
 *@
-<style>
- .x-form-add-trigger {
-   background-image: url(./Client/Library/extjs/resources/themes/images/default/form/search-trigger.gif) !important;
- }
-</style>
 
 <html>
 
@@ -23,10 +18,10 @@ General setup for all GenPres sites:
     <title>@ViewBag.Title</title>
     
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/ClientApplications/Styles/ext-theme-gray/ext-theme-gray-all.css")" />
-    <!--<link rel="stylesheet" type="text/css" href="@Url.Content("~/ClientApplications/Styles/GenPres/css/GenPres.css")" /> -->
-    @RenderSection("CSS", false)
-    <link rel="stylesheet" href="~/ClientApplications/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/ClientApplications/Styles/GenPres/css/GenPres.css")" />
     
+    @RenderSection("CSS", false)
+
     <script>
         Ext = {};
         Ext.app = {};
@@ -42,6 +37,7 @@ General setup for all GenPres sites:
     {
         <script src="~/ClientApplications/Ext/ext-all-debug.js"></script>
     }
+
     @RenderSection("Javascript", false)
     
 </head>

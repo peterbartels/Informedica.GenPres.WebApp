@@ -16,10 +16,10 @@ namespace Informedica.GenPres.WebApp.Controllers
         [AcceptVerbs("GET")]
         public ActionResult Index()
         {
-            var userDto = new Informedica.Service.Presentation.UserDto();
+            var assemblyType = typeof(IDto);
 
-            var types = userDto.GetType().Assembly.GetTypes()
-                .Where(t => t.IsClass)
+            var types = assemblyType.Assembly.GetTypes()
+                .Where(t => t.IsClass && assemblyType.IsAssignableFrom(t))
                 .ToList();
 
             var result = new ModelCollection();
