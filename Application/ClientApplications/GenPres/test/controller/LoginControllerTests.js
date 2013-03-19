@@ -52,7 +52,7 @@ Ext.define('GenPres.test.controller.LoginControllerTests', {
             if (Ext.ComponentQuery.query('window').length == 1) {
                 Ext.ComponentQuery.query('window')[0].close();
             }
-            expect(validated).toBe(false);
+            expect(validated).toBe(true);
         });
     }
 });
