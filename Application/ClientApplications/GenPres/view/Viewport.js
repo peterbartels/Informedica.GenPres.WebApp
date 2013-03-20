@@ -4,7 +4,7 @@ Ext.define('GenPres.view.Viewport', {
     requires:[
         'Ext.tab.Panel',
         'Ext.layout.container.Border',
-		'GenPres.view.user.LoginWindow'
+		'GenPres.view.login.LoginWindow'
     ],
 
     layout: {

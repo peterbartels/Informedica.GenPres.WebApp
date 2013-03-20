@@ -22,7 +22,7 @@ Ext.application({
 	    GenPres: './ClientApplications/GenPres'
 	},
 
-    requires: ['Ext.grid.plugin.BufferedRendererTreeView', 'Shared.util.StoreManager', 'Shared.util.ModelLoader', 'Ext.data.proxy.Direct'],
+	requires: ['Ext.grid.plugin.BufferedRendererTreeView', 'Shared.util.StoreManager', 'Shared.util.ModelLoader', 'Shared.util.Process', 'Ext.data.proxy.Direct', 'GenPres.controller.login.Login'],
 	
 	appFolder : './ClientApplications/GenPres',
 
@@ -34,7 +34,7 @@ Ext.application({
     ],
 
     controllers: [
-        'Main'
+        'GenPres.controller.login.Login'
     ],
 
     launch: function() {

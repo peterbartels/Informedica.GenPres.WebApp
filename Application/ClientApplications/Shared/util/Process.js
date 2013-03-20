@@ -1,4 +1,4 @@
-Ext.define('GenPres.util.Process', {
+Ext.define('Shared.util.Process', {
 
     currentProcessNr : 0,
 
@@ -6,7 +6,7 @@ Ext.define('GenPres.util.Process', {
         var me = this;
 
         if (typeof (me.spot) == "undefined") {
-            me.spot = Ext.create('GenPres.util.Spotlight', {
+            me.spot = Ext.create('Shared.util.Spotlight', {
                 easing: 'easeOut',
                 duration: 300
             });
