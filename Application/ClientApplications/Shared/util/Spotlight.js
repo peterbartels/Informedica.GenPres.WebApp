@@ -2,7 +2,7 @@
  * @class Ext.ux.Spotlight
  * UX used to provide a spotlight around a specified component/element.
  */
-Ext.define('GenPres.util.Spotlight', {
+Ext.define('Shared.util.Spotlight', {
 
     mixins:{observable:'Ext.util.Observable'},
     /**
