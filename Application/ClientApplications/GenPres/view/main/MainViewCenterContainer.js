@@ -12,7 +12,7 @@ Ext.define('GenPres.view.main.MainViewCenterContainer', {
 
     initComponent : function(){
         var me = this;
-
+        
         me.items = [
             {
                 id: 'card-0',
@@ -28,6 +28,6 @@ Ext.define('GenPres.view.main.MainViewCenterContainer', {
     },
 
     height: 100,
-    split: true,
-    margins: '0 5 5 5'
+    split: false,
+    margins: '0 0 0 0'
 })

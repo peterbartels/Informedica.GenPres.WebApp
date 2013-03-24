@@ -10995,7 +10995,7 @@ Ext.define('Ext.util.Observable', function(Observable) {
         },
 
         
-        fireEvent: function(eventName) {
+        fireEvent: function (eventName) {
             return this.fireEventArgs(eventName, Array.prototype.slice.call(arguments, 1));
         },
 
@@ -11012,6 +11012,7 @@ Ext.define('Ext.util.Observable', function(Observable) {
             if (event && me.hasListeners[eventName]) {
                 ret = me.continueFireEvent(eventName, args || emptyArray, event.bubble);
             }
+            
             return ret;
         },
 
@@ -40859,7 +40860,8 @@ Ext.define('Ext.app.EventDomain', {
     },
 
     
-    dispatch: function(target, ev, args) {
+    dispatch: function (target, ev, args) {
+
         var me = this,
             bus = me.bus,
             selectors = bus[ev],
@@ -40880,7 +40882,6 @@ Ext.define('Ext.app.EventDomain', {
                     if (controllers.hasOwnProperty(id)) {
                         
                         events = controllers[id];
-
                         for (i = 0, ln = events.length; i < ln; i++) {
                             event = events[i];
 

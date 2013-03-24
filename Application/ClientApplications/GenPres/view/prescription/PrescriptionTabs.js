@@ -26,6 +26,5 @@ Ext.define('GenPres.view.prescription.PrescriptionTabs', {
     },
 
     height: 200,
-    split: true,
-    margins: '0 5 5 5'
+    split: true
 })

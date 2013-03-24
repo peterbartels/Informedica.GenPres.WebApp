@@ -45,9 +45,40 @@ Ext.application({
 
         me.setDefaults();
 
-        this.viewport = Ext.create('Ext.container.Viewport', {
-            layout: 'fit'
+        this.viewport = Ext.create('Ext.Viewport', {
+            layout: {
+                type: 'border',
+                padding: 1
+            },
+            defaults: {
+                split: true
+            },
+            items: [/*{
+                region: 'west',
+                collapsible: true,
+                title: 'Starts at width 30%',
+                split: true,
+                width: '30%',
+                minWidth: 100,
+                minHeight: 140,
+                html: 'west<br>I am floatable'
+            },*/{
+                region: 'center',
+                html: '',
+                title: '',
+                minHeight: 80
+            }/*,{
+                region: 'south',
+                height: 100,
+                split: true,
+                collapsible: true,
+                title: 'Splitter above me',
+                minHeight: 60,
+                html: 'center south',
+                weight: -100
+            }*/]
         });
+
         me.showLoginWindow();
     },
 
@@ -60,7 +91,7 @@ Ext.application({
 
     getLoginWindow: function () {
         var me = this;
-        return me.getController('login.Login').getLoginWindow();
+        return me.getController('GenPres.controller.login.Login').getLoginWindow();
     },
 
     setDefaults : function(){

@@ -1,24 +1,40 @@
-﻿Ext.define('GenPres.controller.patient.Patient', {
-    extend: 'Ext.app.Controller',
+﻿Ext.define('GenPres.controller.patient.Patient', {    extend: 'Ext.app.Controller',
 
-    stores:['patient.LogicalUnitStore', 'patient.PatientInfoStore', 'patient.PatientTreeStore'],
+    views: [],
 
-    models:['patient.LogicalUnitModel', 'patient.PatientModel'],
-
-    views:['main.PatientTree', 'main.PatientInfo'],
+    logicalUnitId: null,
 
     init: function() {
         this.control({
             'treepanel': {
                 beforeitemclick: this.checkRootNode,
                 itemclick: this.loadPatientData
+            },
+            'patientlist': {
+                select: this.loadPatientData,
+                render: this.loadPatientList,
+                itemmouseenter: this.hoverItem,
+                itemmouseleave: this.unhoverItem
             }
         });
     },
 
-    onLaunch: function() {
-        
+    hoverItem : function(view, record, item, index, e, eOpts){
+        extItem = Ext.get(item);
+        extItem.animate({ easing: 'easeIn', duration: 50, to: { backgroundColor: '#fff', color: '#3892D3' } });
     },
+
+    unhoverItem: function (view, record, item, index, e, eOpts) {
+        extItem = Ext.get(item);
+        extItem.animate({ easing: 'easeIn', duration: 1, to: { backgroundColor: '#3892D3', color: '#fff' } });
+    },
+
+    loadPatientList: function (view) {
+        
+        view.store.proxy.extraParams.logicalUnit = this.logicalUnitId;
+        view.store.reload();
+    },
+
     checkRootNode : function(tree, record, htmlitem, index, event, options){
         if(index==0){
             var infoStore = this.getPatientPatientInfoStoreStore();
@@ -31,7 +47,7 @@
     },
     loadPatientData : function(tree, record, htmlitem, index, event, options){
 
-        var me =this,
+        /*(var me =this,
             infoStore = this.getPatientPatientInfoStoreStore();
 
         infoStore.loadRecords([record], {addRecords: false});
@@ -40,7 +56,7 @@
         var gridPanel = this.getGridPanel();
         gridPanel.store.proxy.extraParams.PID = GenPres.session.PatientSession.patient.PID;
         gridPanel.store.load();
-
+        
         Patient.SelectPatient(GenPres.session.PatientSession.patient.PID, function(patientDto){
             var prescriptionController = GenPres.application.getController('prescription.PrescriptionController');
             prescriptionController.loadPrescriptionForm();
@@ -48,7 +64,9 @@
             me.setPatientWeight(patientDto.Weight);
             me.setPatientLength(patientDto.Height);
             prescriptionController.updatePrescription();
-        });
+        });*/
+        var prescriptionController = GenPres.application.getController('prescription.PrescriptionController');
+        prescriptionController.loadPrescriptionForm();
     },
 
     setPatientWeight : function(weight){
@@ -67,6 +85,16 @@
 
     getGridPanel : function(){
         return GenPres.application.MainCenter.query('.prescriptiongrid')[0];
+    },
+
+    setLogicalUnitId : function(logicalUnitId){
+        var me = this;
+        me.logicalUnitId = logicalUnitId;
+    },
+
+    getLogicalUnitId: function () {
+        var me = this;
+        return me.logicalUnitId;
     },
     
     getTreePanel : function(){

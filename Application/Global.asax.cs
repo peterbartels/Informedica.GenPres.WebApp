@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Autofac;
+using Autofac.Configuration;
 using Autofac.Integration.Mvc;
 using Informedica.GenPres.Application.IoC.Modules;
 using Informedica.Service.Presentation;
@@ -29,8 +30,11 @@ namespace Informedica.GenPres.WebApp
 
             var builder = GenPres.Application.IoC.MvcApplication.BuildIoC();
             builder.RegisterModule(new DatabaseAcceptanceContextModule("http://localhost:8080", "GenPres"));
+            
             builder.RegisterType<ManagementService>().As<IMangementService>().InstancePerHttpRequest();
+
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
+            //builder.RegisterModule(new ConfigurationSettingsReader());
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

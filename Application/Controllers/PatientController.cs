@@ -13,9 +13,9 @@ namespace Informedica.GenPres.WebApp.Controllers
             PatientService = patientService;
         }
 
-        public ActionResult GetPatientsByLogicalUnit()
+        public ActionResult GetPatientsByLogicalUnit(string logicalUnitId)
         {
-            return Json(PatientService.GetPatientsByLogicalUnitId("0f7eae8d-af5a-4e1d-874c-c1e44d7ab8e9"));
+            return Json(PatientService.GetPatientsByLogicalUnitId(logicalUnitId));
         }
     }
 }

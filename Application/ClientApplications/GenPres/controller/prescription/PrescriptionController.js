@@ -2,9 +2,9 @@ Ext.define('GenPres.controller.prescription.PrescriptionController', {
 
     extend:'Ext.app.Controller',
 
-    stores:['prescription.GenericStore', 'prescription.RouteStore', 'prescription.ShapeStore', 'prescription.Prescription'],
+    stores:['prescription.GenericStore', 'prescription.RouteStore', 'prescription.ShapeStore'/*, 'prescription.Prescription'*/],
 
-    models:['prescription.Prescription'],
+    /*models:['prescription.Prescription'],*/
 
     views:['prescription.PrescriptionToolbar', 'prescription.DrugComposition', 'main.PatientTree', 'prescription.PrescriptionForm', 'main.TopToolbar', 'prescription.PrescriptionGrid'],
 

@@ -10,7 +10,7 @@ Ext.define('GenPres.view.main.MainViewCenter', {
 
     initComponent : function(){
         var me = this;
-
+        
         me.items = [
             Ext.create('GenPres.view.main.MainViewCenterContainer'),
             Ext.create('GenPres.view.prescription.PrescriptionTabs')
@@ -20,6 +20,5 @@ Ext.define('GenPres.view.main.MainViewCenter', {
     },
 
     height: 100,
-    split: true,
-    margins: '0 5 5 5'
+    split: true
 })

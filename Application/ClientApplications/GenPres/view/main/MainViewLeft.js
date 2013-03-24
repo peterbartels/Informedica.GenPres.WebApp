@@ -12,9 +12,9 @@ Ext.define('GenPres.view.main.MainViewLeft', {
         align: 'stretch'
     },
 
-    width: 200,
+    width: 300,
     split: true,
-    margins: '0 5 5 5',
+    margins: '0 0 0 0',
 
     initComponent : function(){
         var me = this;
@@ -22,7 +22,7 @@ Ext.define('GenPres.view.main.MainViewLeft', {
             {
                 xtype:'box',
                 border:false,
-                html:'<img src="Client/GenPres/style/images/logo.png" style="margin-top:22px;" />',
+                html: '<div style="text-align:center"><img src="ClientApplications/Styles/GenPres/images/logo.png" style="margin-top:22px;" /></div>',
                 height: 82
             },
             Ext.create('GenPres.view.main.PatientTree', {

@@ -15,7 +15,7 @@ Ext.define('GenPres.controller.login.Login', {
         var me = this;
 
         this.control({
-            'toolbar button[action=login]': {
+            'window button[text=Login]': {
                 click: me.onClickValidateLogin
             },
             'button[action=registerdatabase]': {
@@ -26,11 +26,8 @@ Ext.define('GenPres.controller.login.Login', {
             },
             'dataview' : {
                 itemclick: function (view, record, item, index, event) {
-                    
-                    GenPres.session.PatientSession.setLogicalUnit(
-                        record.data.Id,
-                        record.data.Name
-                    )
+                    var patientController = me.getController('GenPres.controller.patient.Patient');
+                    patientController.setLogicalUnitId(record.data.Id);
                 }
             }
         });
@@ -51,7 +48,7 @@ Ext.define('GenPres.controller.login.Login', {
         //fieldset.collapse();
     },
 
-    onClickValidateLogin: function(button) {
+    onClickValidateLogin: function (button) {
         var win, form, vals;
         win = button.up('window');
         this.loginWindow = win;
@@ -61,7 +58,7 @@ Ext.define('GenPres.controller.login.Login', {
     },
 
     validateLogin: function(vals) {
-        if(this.validateLoginForm(vals)){
+        if (this.validateLoginForm(vals)) {
             Login.Authenticate(vals.username, vals.password, this.loginCallBackFunction, this);
         }
     },
@@ -77,10 +74,10 @@ Ext.define('GenPres.controller.login.Login', {
             error += 'Selecteer aub een wachtwoord<br />';
         }
 
+        var patientController = this.getController('GenPres.controller.patient.Patient');
+        
         if(
-            GenPres.session.PatientSession.getLogicalUnitId() == ''
-            ||
-            GenPres.session.PatientSession.getLogicalUnitName() == ''
+            patientController.getLogicalUnitId() == null
         ){
             error += 'Selecteer aub een afdeling\n';
         }
@@ -96,9 +93,15 @@ Ext.define('GenPres.controller.login.Login', {
         me.loggedIn = result.success;
 
         if (result.success) {
-            //Ext.MessageBox.alert('GenPres 2011 Login', 'Login succesvol', me.closeLoginWindow, me);
             me.closeLoginWindow();
-            Ext.create('GenPres.view.main.MainView', {logicalUnitId:GenPres.session.PatientSession.getLogicalUnitId()});
+
+            var mainViewLeft = Ext.create('GenPres.view.main.MainViewLeft');
+            var mainViewCenter = Ext.create('GenPres.view.main.MainViewCenter');
+            GenPres.application.viewport.removeAll();
+            GenPres.application.viewport.add(mainViewLeft);
+            GenPres.application.viewport.add(mainViewCenter);
+            GenPres.application.viewport.doLayout();
+
         }else{
             Ext.MessageBox.alert('GenPres 2011 Login', 'Login geweigerd');
         }
