@@ -1,33 +1,31 @@
-﻿Ext.define('GenPres.view.main.PatientTree', {
-    extend: 'Ext.tree.Panel',
+﻿
+Ext.define('GenPres.view.main.PatientTree', {
+    extend: 'Ext.view.View',
 
-    alias: 'widget.patienttree',
+    alias: 'widget.logicalunitselector',
 
-    xtype: 'treepanel',
+    margin: '0 0 0 0',
 
-    border: false,
+    itemSelector: 'div.PatientViewItem',
 
-    folderSort: true,
+    emptyText: 'No logical units found',
 
-    useArrows: true,
-
-    flex: 1,
-
-    scroll:'both',
+    singleSelect: true,
 
     autoScroll: true,
 
-    store: Ext.create('GenPres.store.patient.PatientTreeStore'),
+    store: Shared.util.StoreManager.GetStore('PatientDto', Patient.GetPatientsByLogicalUnit),
 
-    constructor : function(){
+    tpl: new Ext.XTemplate(
+            '<tpl for="."><div class="PatientView">',
+                '<div class="PatientViewItem">',
+                    '{FirstName}&nbsp;{LastName}',
+                '</div>',
+            '</div></tpl>'),
+
+    initComponent: function () {
         var me = this;
         me.callParent();
-    },
-
-    initComponent : function(){
-        var me = this;
-        me.callParent();
-        me.store.model.proxy.extraParams.logicalUnitId = GenPres.session.PatientSession.getLogicalUnitId();
-        me.expandAll();
+        
     }
 });

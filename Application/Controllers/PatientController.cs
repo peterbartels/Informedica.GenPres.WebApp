@@ -1,20 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Ext.Direct.Mvc;
+using Informedica.Service.Presentation;
 
 namespace Informedica.GenPres.WebApp.Controllers
 {
     public class PatientController : DirectController
     {
-        //
-        // GET: /Patient/
+        public IPatientService PatientService { get; set; }
 
-        public ActionResult GetPatientsByLogicalUnit(string logicalUnitId)
+        public PatientController(IPatientService patientService)
         {
-            return Json(false);
+            PatientService = patientService;
+        }
+
+        public ActionResult GetPatientsByLogicalUnit()
+        {
+            return Json(PatientService.GetPatientsByLogicalUnitId("0f7eae8d-af5a-4e1d-874c-c1e44d7ab8e9"));
         }
     }
 }

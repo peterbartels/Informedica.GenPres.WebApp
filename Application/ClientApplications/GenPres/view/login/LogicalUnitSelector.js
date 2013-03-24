@@ -13,7 +13,7 @@ Ext.define('GenPres.view.login.LogicalUnitSelector', {
 
     autoScroll: true,
 
-    store: Shared.util.StoreManager.GetStore('LogicalUnitDto', Login.GetLogicalUnits, [{property: 'Name',direction: 'ASC'}]),
+    store: Shared.util.StoreManager.GetStore('LogicalUnitDto', Login.GetLogicalUnits, { sorters: [{ property: 'Name', direction: 'ASC' }] }),
     
     tpl: new Ext.XTemplate(
             '<tpl for="."><div class="LogicalUnitDataView">',

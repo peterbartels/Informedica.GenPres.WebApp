@@ -25,10 +25,11 @@ Ext.define('GenPres.controller.login.Login', {
                 click: me.onClickSaveDatabaseRegistration
             },
             'dataview' : {
-                itemclick : function(view, record, item, index, event){
+                itemclick: function (view, record, item, index, event) {
+                    
                     GenPres.session.PatientSession.setLogicalUnit(
-                        record.data.id,
-                        record.data.text
+                        record.data.Id,
+                        record.data.Name
                     )
                 }
             }
@@ -95,7 +96,8 @@ Ext.define('GenPres.controller.login.Login', {
         me.loggedIn = result.success;
 
         if (result.success) {
-            Ext.MessageBox.alert('GenPres 2011 Login', 'Login succesvol', me.closeLoginWindow, me);7
+            //Ext.MessageBox.alert('GenPres 2011 Login', 'Login succesvol', me.closeLoginWindow, me);
+            me.closeLoginWindow();
             Ext.create('GenPres.view.main.MainView', {logicalUnitId:GenPres.session.PatientSession.getLogicalUnitId()});
         }else{
             Ext.MessageBox.alert('GenPres 2011 Login', 'Login geweigerd');
