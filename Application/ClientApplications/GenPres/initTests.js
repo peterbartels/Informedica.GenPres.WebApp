@@ -55,8 +55,8 @@ Ext.application({
     ],
 
     paths: {
-        Shared: './ClientApplications/Shared',
-        GenPres: './ClientApplications/GenPres'
+        Shared: '../ClientApplications/Shared',
+        GenPres: '../ClientApplications/GenPres'
     },
 
     requires: [],

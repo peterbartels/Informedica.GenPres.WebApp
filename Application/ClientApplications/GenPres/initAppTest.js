@@ -14,13 +14,13 @@ Ext.require([
 
 globalvars = {};
 
-var createBindFunction = function(func, scope, args, gobalvarname, waitcount){
+var createBindFunction = function (func, scope, args, gobalvarname, waitcount) {
     //var bindFunc = Ext.Function.bind(func, scope, args);
     var fn = Ext.Function.bind(func, scope, args);
-    var deferFunc = function(){
+    var deferFunc = function () {
         if (waitcount > 0) {
             setTimeout(fn, waitcount);
-        }else{
+        } else {
             fn();
         }
         return globalvars[gobalvarname];
@@ -28,28 +28,36 @@ var createBindFunction = function(func, scope, args, gobalvarname, waitcount){
     return deferFunc;
 }
 
-Ext.onReady(function () {
-    var loginTest, advancedLoginTest, selectPatientTest, drugCompositionTest, prescriptionTest;
+Ext.application({
 
-    Ext.direct.Manager.addProvider(Ext.app.REMOTING_API);
+    name: 'GenPres',
 
-    Ext.app.config.appFolder = '../Client/GenPres/app';
-    Ext.app.config.launch = function() {
+    models: [
+    ],
+
+    paths: {
+        Shared: '../ClientApplications/Shared',
+        GenPres: '../ClientApplications/GenPres'
+    },
+
+    requires: ['Ext.grid.plugin.BufferedRendererTreeView', 'Shared.util.StoreManager', 'Shared.util.ModelLoader', 'Shared.util.Process', 'Ext.data.proxy.Direct', 'GenPres.controller.login.Login'],
+
+    appFolder: '../ClientApplications/GenPres',
+
+
+    launch: function () {
         var me = this;
         GenPres.application = me;
 
-
-        this.viewport = Ext.create('Ext.container.Viewport', {
+        this.viewport = Ext.create('Ext.Viewport', {
             layout: 'fit'
         });
 
-        me.setDefaults();
-
         me.showLoginWindow();
-        
+
         advancedLoginTest = Ext.create('GenPres.test.usecase.AdvancedLoginTest');
         describe(advancedLoginTest.describe, advancedLoginTest.tests);
-
+        /*
         loginTest = Ext.create('GenPres.test.usecase.LoginTest');
         describe(loginTest.describe, loginTest.tests);
 
@@ -64,15 +72,24 @@ Ext.onReady(function () {
 
         //prescriptionTest = Ext.create('GenPres.test.usecase.PrescriptionTest');
         //describe(prescriptionTest.describe, prescriptionTest.tests);
-
+        */
 
 
         jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
         jasmine.Queue(jasmine.getEnv());
         jasmine.getEnv().execute();
 
-    };
+    },
 
-    Ext.application(Ext.app.config);
+    showLoginWindow: function () {
+        var me = this, window;
+        
+        window = me.getLoginWindow().show();
+        //me.getController('user.Login').setDefaultDatabase(window);
+    },
 
+    getLoginWindow: function () {
+        var me = this;
+        return me.getController('login.Login').getLoginWindow();
+    }
 });
