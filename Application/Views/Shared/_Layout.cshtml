@@ -26,7 +26,6 @@ General setup for all GenPres sites:
         Ext = {};
         Ext.app = {};
         Ext.ns = function () {
-            
         };
     </script>
 
@@ -36,8 +35,9 @@ General setup for all GenPres sites:
     @if (Request.Params["debug"] != null)
     {
         <script src="~/ClientApplications/Ext/ext-all-debug.js"></script>
-        <script src="~/ClientApplications/Styles/ext-theme-neptune/ext-theme-neptune.js"></script>
     }
+
+    <script src="~/ClientApplications/Styles/ext-theme-neptune/ext-theme-neptune.js"></script>
 
     @RenderSection("Javascript", false)
     
