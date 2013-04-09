@@ -50,17 +50,47 @@ Ext.application({
         GenPres.application = me;
 
         this.viewport = Ext.create('Ext.Viewport', {
-            layout: 'fit'
+            layout: {
+                type: 'border',
+                padding: 1
+            },
+            defaults: {
+                split: true
+            },
+            items: [/*{
+                region: 'west',
+                collapsible: true,
+                title: 'Starts at width 30%',
+                split: true,
+                width: '30%',
+                minWidth: 100,
+                minHeight: 140,
+                html: 'west<br>I am floatable'
+            },*/{
+                region: 'center',
+                html: '',
+                title: '',
+                minHeight: 80
+            }/*,{
+                region: 'south',
+                height: 100,
+                split: true,
+                collapsible: true,
+                title: 'Splitter above me',
+                minHeight: 60,
+                html: 'center south',
+                weight: -100
+            }*/]
         });
 
         me.showLoginWindow();
-
+/*
         advancedLoginTest = Ext.create('GenPres.test.usecase.AdvancedLoginTest');
         describe(advancedLoginTest.describe, advancedLoginTest.tests);
-        /*
+  */      
         loginTest = Ext.create('GenPres.test.usecase.LoginTest');
         describe(loginTest.describe, loginTest.tests);
-
+/*
         selectPatientTest = Ext.create('GenPres.test.usecase.SelectPatientTest');
         describe(selectPatientTest.describe, selectPatientTest.tests);
 

@@ -12,9 +12,9 @@
             },
             'patientlist': {
                 select: this.loadPatientData,
-                render: this.loadPatientList,
+                render: this.loadPatientList/*,
                 itemmouseenter: this.hoverItem,
-                itemmouseleave: this.unhoverItem
+                itemmouseleave: this.unhoverItem*/
             }
         });
     },

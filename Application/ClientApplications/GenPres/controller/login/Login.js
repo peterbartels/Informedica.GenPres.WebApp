@@ -90,18 +90,20 @@ Ext.define('GenPres.controller.login.Login', {
 
     loginCallBackFunction: function (result) {
         var me = this;
-        me.loggedIn = result.success;
-
-        if (result.success) {
+        me.processAuthentication (result.success);
+    },
+	
+	processAuthentication: function (isAuthenticated) {
+        var me = this;
+		me.loggedIn = isAuthenticated;
+        if (isAuthenticated) {
             me.closeLoginWindow();
-
             var mainViewLeft = Ext.create('GenPres.view.main.MainViewLeft');
             var mainViewCenter = Ext.create('GenPres.view.main.MainViewCenter');
             GenPres.application.viewport.removeAll();
             GenPres.application.viewport.add(mainViewLeft);
             GenPres.application.viewport.add(mainViewCenter);
             GenPres.application.viewport.doLayout();
-
         }else{
             Ext.MessageBox.alert('GenPres 2011 Login', 'Login geweigerd');
         }

@@ -10,7 +10,7 @@ Ext.define('GenPres.test.usecase.LoginTest', {
             waitingTime = 5000;
 
         me.getLoginController = function () {
-            return GenPres.application.getController('user.Login');
+            return GenPres.application.getController('login.Login');
         };
 
         me.getLoginWindow = function () {
@@ -112,13 +112,25 @@ Ext.define('GenPres.test.usecase.LoginTest', {
                 userField = me.getFormField('username'),
                 passwField = me.getFormField('password');
 
-            me.setFormField(userField, "test");
-            me.setFormField(passwField, "Test");
-
+            me.setFormField(userField, "peter");
+            me.setFormField(passwField, "test");
+			
+			var controller = me.getLoginController();
+			
+			spyOn(controller, 'processAuthentication').andCallThrough();
+			
             me.clickButton(button);
-            loginMessage = successMessage;
-            waitsFor(me.checkLoginMessage, "waiting for successfull login", waitingTime);
+			
+            waitsFor(function(){
+				var results = Ext.ComponentQuery.query('patientlist');
+				if (results.length > 0)
+				{
+					expect(controller.processAuthentication).toHaveBeenCalledWith(true);
+					return true;
+				}
+				return false;
+			}, "waiting for successfull login", waitingTime);
+			
         });
-
     }
 });
