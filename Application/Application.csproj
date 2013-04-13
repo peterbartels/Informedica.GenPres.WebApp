@@ -53,10 +53,10 @@
       <HintPath>..\packages\ext-direct-mvc\Ext.Direct.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Informedica.GenPres.Application">
-      <HintPath>..\System\Informedica.GenPres.Application.dll</HintPath>
+      <HintPath>..\..\Informedica.GenPres.Acceptance\Source\System\Informedica.GenPres.Application.dll</HintPath>
     </Reference>
     <Reference Include="Informedica.Service.Presentation">
-      <HintPath>..\System\Informedica.Service.Presentation.dll</HintPath>
+      <HintPath>..\..\Informedica.GenPres.Acceptance\Source\System\Informedica.Service.Presentation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -211,7 +211,9 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Management\Index.cshtml" />
   </ItemGroup>

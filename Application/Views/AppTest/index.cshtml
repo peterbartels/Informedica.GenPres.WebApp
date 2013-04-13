@@ -4,22 +4,22 @@ Application tester with use case scenario's
 
 @section CSS
 {
-        <link rel="stylesheet" type="text/css" href="@Url.Content("~/ClientApplications/Styles/GenPres/css/VisibleGuiTest.css")" />
-        <link rel="stylesheet" type="text/css" href="@Url.Content("~/ClientApplications/Library/jasmine/lib/jasmine-1.3.1/jasmine.css")" />
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Frontend/Styles/GenPres/css/VisibleGuiTest.css")" />
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Frontend/Library/jasmine/lib/jasmine-1.3.1/jasmine.css")" />
         
 }
 
 
 @section Javascript
 {
-    <script type="text/javascript" src="@Url.Content("~/ClientApplications/Library/jasmine/lib/jasmine-1.3.1/jasmine.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/ClientApplications/Library/jasmine/lib/jasmine-1.3.1/jasmine-html.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Frontend/Library/jasmine/lib/jasmine-1.3.1/jasmine.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Frontend/Library/jasmine/lib/jasmine-1.3.1/jasmine-html.js")"></script>
 
-    <script type="text/javascript" src="@Url.Content("~/ClientApplications/Library/jasmine/jasmine.teamcity_reporter.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Frontend/Library/jasmine/jasmine.teamcity_reporter.js")"></script>
     
     @if (Request.Params["debug"] != null)
     {
-        <script type="text/javascript" src="@Url.Content("~/ClientApplications/GenPres/initAppTest.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Frontend/GenPres/initAppTest.js")"></script>
     }
     else
     {
