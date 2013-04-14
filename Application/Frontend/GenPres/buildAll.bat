@@ -16,6 +16,5 @@ move app-all.temp app-all.js
 REM gmove tests-all.temp tests-all.js
 
 
-c:\Development\Projects\Informedica.GenPres.WebApp>sencha compile -classpath=../
-Shared -classpath=./ page -name=page -in GenPres.html -out test.html and include
- -namespace GenPres and concat app-all.js
+c:\Development\Projects\Informedica.GenPres.WebApp>sencha compile -classpath=../Shared -classpath=./ page -name=page -in GenPres.html -out test.html and include -namespace GenPres and concat app-all.js
+ 
