@@ -12,7 +12,7 @@ Ext.define('GenPres.view.main.MainViewCenterContainer', {
 	
     initComponent : function(){
         var me = this;
-		debugger;
+		
         me.items = [
             {
                 id: 'card-0',
