@@ -1,12 +1,12 @@
-//@require @pext.ackageOverrides
+
 Ext.require('Ext.*');
 
 Ext.Loader.setConfig({
     enabled: true,
 
     paths: {
-        Shared: './Shared',
-        GenPres: './GenPres'
+        Shared: './Frontend/Shared',
+        GenPres: './Frontend/GenPres'
     }
 });
 
@@ -20,8 +20,8 @@ Ext.application({
     ],
 	
 	paths : {
-	    Shared: './Shared',
-	    GenPres: './GenPres'
+	    Shared: './Frontend/Shared',
+	    GenPres: './Frontend/GenPres'
 	},
 
 	requires: [
@@ -33,10 +33,9 @@ Ext.application({
 		'GenPres.controller.login.Login'
 	],
 	
-	appFolder : './GenPres',
+	appFolder : './Frontend/GenPres',
 
     views: [
-        
     ],
 
     stores: [
@@ -64,22 +63,40 @@ Ext.application({
 	},
 	
     launch: function() {
-        var me = this;
+        
+		var me = this;
         GenPres.application = me;
-		
-		//me.getViewPort();
-        //GenPres.ASyncEventManager = GenPres.lib.util.ASyncEventManager;
-
         me.setDefaults();
-		
-        me.showLoginWindow();
+		var getParams = document.URL.split("?");
+		var params = Ext.urlDecode(getParams[getParams.length - 1]);
+		if(typeof(params.test) != "undefined" && params.test != ""){
+			me.runTests(params.test);
+		}else{
+			me.showLoginWindow();
+		}
     },
 
+	runTests: function(testRunnerType){
+		var me = this;
+		
+		if(testRunnerType == "usecase"){
+			me.showLoginWindow();
+			
+			//TODO: move to seperate test runner class (file)
+			var loginTest = Ext.create('GenPres.test.usecase.LoginTest');
+			describe(loginTest.describe, loginTest.tests);
+		}
+		if(testRunnerType == "integration"){
+			
+		}
+		jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+        jasmine.Queue(jasmine.getEnv());
+        jasmine.getEnv().execute();
+	},
+	
     showLoginWindow: function () {
         var me = this, window;
-        
         window = me.getLoginWindow().show();
-        //me.getController('user.Login').setDefaultDatabase(window);
     },
 
     getLoginWindow: function () {

@@ -1,16 +1,8 @@
 ﻿﻿@*
-General setup for all GenPres sites:
-- Home: The Acceptation/Production version
-- Debug: The Acceptation/Production version with Loader enabled for ExtJs
-- Tests: Runs individual tests
-- AppTest: Runs app specific use case scenario's
+General setup for everything using ext
 *@
 
 <!DOCTYPE html>
-@* 
-    Add style element for the EditableComboBox class
-    TODO: generate special genpres.css
-*@
 
 <html>
 
@@ -28,19 +20,16 @@ General setup for all GenPres sites:
         Ext.ns = function () {
         };
     </script>
-
+    
     <script type="text/javascript" src="@Url.Content("~/DirectApi")"></script>
     <script type="text/javascript" src="@Url.Content("~/DirectModel")"></script>
 
-    @if (Request.Params["debug"] != null)
-    {
-        <script src="@Url.Content("~/Frontend/Ext/ext-all-debug.js")"></script>
-    }
+    <script src="@Url.Content("~/Frontend/Ext/ext-all-debug.js")"></script>
+
     @RenderSection("Javascript", false)
     
     <script src="@Url.Content("~/Frontend/packages/genpres-theme/build/genpres-theme-debug.js")"></script>
-    
-    <!--<script src="~/Frontend/Styles/ext-theme-neptune/ext-theme-neptune.js"></script>-->
+
 </head>
 <body>
     @RenderBody()
