@@ -7,7 +7,7 @@ Ext.define('GenPres.view.main.MainViewCenter', {
     border:false,
 
     layout: 'border',
-
+	
     initComponent : function(){
         var me = this;
         

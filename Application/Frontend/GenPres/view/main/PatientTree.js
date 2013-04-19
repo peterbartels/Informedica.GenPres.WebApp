@@ -9,7 +9,7 @@ Ext.define('GenPres.view.main.PatientTree', {
     itemSelector: 'div.PatientViewItem',
 
     emptyText: 'No logical units found',
-
+	
     singleSelect: true,
 
     autoScroll: true,
@@ -21,7 +21,10 @@ Ext.define('GenPres.view.main.PatientTree', {
     tpl: new Ext.XTemplate(
             '<tpl for="."><div class="PatientView">',
                 '<div class="PatientViewItem">',
-                    '{FirstName}&nbsp;{LastName}',
+					'<div class="PatientViewIcon"></div>',
+                    '<div class="PatientViewText">',
+						'<div>{FirstName}&nbsp;{LastName}</div><div style="font-size:10px;">16-03-1983</div>',
+					'</div>',
                 '</div>',
             '</div></tpl>'),
 

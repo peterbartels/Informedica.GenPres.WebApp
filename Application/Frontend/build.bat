@@ -1,0 +1,1 @@
+sencha compile -classpath=./ext/src -classpath=./Shared -classpath=./GenPres exclude -all and include -namespace GenPres and include -namespace Shared and concat -yui ./app-all.js

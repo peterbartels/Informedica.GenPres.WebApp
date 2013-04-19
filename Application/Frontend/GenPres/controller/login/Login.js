@@ -5,7 +5,7 @@ Ext.define('GenPres.controller.login.Login', {
 	requires: ['GenPres.session.PatientSession', 'GenPres.controller.patient.Patient'],
 	
     views: [
-        'login.LoginWindow'
+        'GenPres.view.login.LoginWindow'
     ],
 
     loggedIn: false,
@@ -35,7 +35,7 @@ Ext.define('GenPres.controller.login.Login', {
 
     getLoginWindow: function () {
         var me = this, window;
-        window = me.getLoginLoginWindowView().create();
+		window = me.getGenPresViewLoginLoginWindowView().create();
         return window;
     },
 

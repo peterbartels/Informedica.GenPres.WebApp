@@ -15,10 +15,21 @@
 
         <script type="text/javascript" src="@Url.Content("~/Frontend/Library/jasmine/jasmine.teamcity_reporter.js")"></script>
     }
+    
+    <script>
+        Ext.Loader.setConfig({
+            enabled: true,
+
+            paths: {
+                Shared: './Frontend/Shared',
+                GenPres: './Frontend/GenPres'
+            }
+        });
+    </script>
         
     @if (Request.Params["debug"] != null)
     {
-        <script type="text/javascript"  src="~/Frontend/app.js"></script>
+        <script type="text/javascript"  src="~/Frontend/GenPres/app.js"></script>
     }
     else
     {

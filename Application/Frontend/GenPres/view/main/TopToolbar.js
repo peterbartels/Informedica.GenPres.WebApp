@@ -3,7 +3,7 @@ Ext.define('GenPres.view.main.ToolbarButton', {
     extend:'Ext.button.Button',
     text: '',
     scale:'small',
-    location: 'ClientApplications/Styles/GenPres/images/TopToolbar/',
+    location: 'Frontend/Styles/GenPres/images/TopToolbar/',
     iconAlign:'left',
     disabled: false,
     width:60,
@@ -23,14 +23,14 @@ Ext.define('GenPres.view.main.TopToolbar', {
         me.items = [
             {
                 xtype: 'buttongroup',
-                columns: 5,
+                columns: 3,
                 title: 'Algemeen',
+				height: 96,
                 items : [
-                    Ext.create('GenPres.view.main.ToolbarButton', { icon: 'Home_32.png', text: 'Home', width: 80, action: 'home' }),
-                    {xtype: 'tbseparator',height:20},
+                    Ext.create('GenPres.view.main.ToolbarButton', {icon: 'Home_32.png', text: 'Home', width: 80, action: 'home', rowspan:2, scale:'large', iconAlign:'top' }),
                     Ext.create('GenPres.view.main.ToolbarButton', {icon:'Prescription_32.png', text:'Voorschrijven', width:130}),
-                    {xtype: 'tbseparator',height:20},
-                    Ext.create('GenPres.view.main.ToolbarButton', {icon:'TPN_32.png', text:'TPN', width:70})
+                    Ext.create('GenPres.view.main.ToolbarButton', {icon:'TPN_32.png', text:'TPN', width:70}),
+                    Ext.create('GenPres.view.main.ToolbarButton', {icon:'TPN_32.png', text:'Aanpassen', width:130})
                 ]
             },
             {xtype: 'tbseparator',height:20},
@@ -38,6 +38,7 @@ Ext.define('GenPres.view.main.TopToolbar', {
                 xtype: 'buttongroup',
                 columns: 3,
                 title: 'Opties',
+				height: 96,
                 items : [
                     Ext.create('GenPres.view.main.ToolbarButton', {icon:'Template_32.png', text:'Sjablonen', width:100}),
                     {xtype: 'tbseparator',height:20},
@@ -48,14 +49,14 @@ Ext.define('GenPres.view.main.TopToolbar', {
                 xtype: 'buttongroup',
                 columns: 1,
                 title: 'Patient informatie',
-                height:81,
+                height:96,
                 width:350,
                 items : Ext.create('GenPres.view.main.PatientInfo')
             },
             {
                 xtype: 'buttongroup',
                 columns: 1,
-                height: 81,
+                height: 96,
                 html: 'medewerker info',
                 width:200,
                 title: 'Medewerker'

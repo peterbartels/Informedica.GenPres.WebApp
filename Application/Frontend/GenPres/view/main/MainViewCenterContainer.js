@@ -9,7 +9,9 @@ Ext.define('GenPres.view.main.MainViewCenterContainer', {
     border:false,
 
     layout: 'card',
-	
+	bodyStyle: {
+		background: '#f0f0f0',
+	},
     initComponent : function(){
         var me = this;
 		

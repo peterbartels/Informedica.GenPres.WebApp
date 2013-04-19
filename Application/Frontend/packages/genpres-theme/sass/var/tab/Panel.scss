@@ -1,0 +1,25 @@
+$tab-base-color: #333333 !default;
+$tab-base-color-disabled: #333333 !default;
+
+$tab-color-active: #333333 !default;
+$tab-color: #333333 !default;
+
+
+$tab-base-color: #000 !default;
+$tab-base-color-over: #000 !default;
+$tab-base-color-active: #000 !default;
+
+$tab-border-width-disabled: 0 !default;
+$tab-border-width-active: 0 !default;
+
+$tab-background-gradient: color-stops(#dcdcdc, #eaeaea) !default;
+$tab-background-gradient-over: color-stops(#ffffff, #f0f0f0) !default;
+$tab-background-gradient-active: color-stops(#ffffff, #eaeaea) !default;
+$tab-background-gradient-disabled: color-stops(#eeeeee, #f4f4f4) !default;
+
+$tab-border-width: 0 !default;
+
+$tabbar-border-width: 0 !default;
+
+$tabbar-strip-border-width: 0 !default;
+$tabbar-strip-height: 0px !default;

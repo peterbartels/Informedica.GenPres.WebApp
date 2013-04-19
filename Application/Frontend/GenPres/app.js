@@ -30,6 +30,7 @@ Ext.application({
 		'Shared.util.ModelLoader', 
 		'Shared.util.Process', 
 		'Ext.data.proxy.Direct', 
+		'GenPres.view.login.LoginWindow',
 		'GenPres.controller.login.Login'
 	],
 	

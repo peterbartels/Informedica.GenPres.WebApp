@@ -4,6 +4,10 @@ Ext.define('GenPres.view.main.MainViewLeft', {
     region: 'west',
     xtype: 'panel',
     border:false,
+	
+	title: 'Patienten',
+	
+	collapsible:true,
 
     autoScroll:true,
 

@@ -20,5 +20,5 @@ Build date: 2013-03-11 22:33:40 (aed16176e68b5e8aa1433452b12805c0ad913836)
 */
 Ext.define('GenPresTheme.resizer.Splitter', {
     override: 'Ext.resizer.Splitter',
-    size: 12
+    size: 5
 });
