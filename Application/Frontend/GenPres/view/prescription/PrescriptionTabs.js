@@ -5,8 +5,9 @@ Ext.define('GenPres.view.prescription.PrescriptionTabs', {
 
     border:false,
     bodyStyle: {
-		background: '#f0f0f0',
+		background: '#f0f0f0' 
 	},
+	
     initComponent : function(){
         var me = this;
 

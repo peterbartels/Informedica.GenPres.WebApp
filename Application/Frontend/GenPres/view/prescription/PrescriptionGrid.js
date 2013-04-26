@@ -7,6 +7,9 @@ Ext.define('GenPres.view.prescription.PrescriptionGrid', {
 	bodyStyle: {
 		background: '#f0f0f0',
 	},
+	
+	margins:'10 10 10 10',
+		
     alias: 'widget.prescriptiongrid',
 
 /*    store: 'prescription.Prescription',*/
