@@ -1,6 +1,15 @@
-$button-default-base-color: #f8f8f8 !default;
+
+
+$button-small-border-radius: 0px !default;
+$button-medium-border-radius: 0px !default;
+$button-large-border-radius: 0px !default;
+
+	
+/*$button-default-base-color: #fff !default;
 $button-default-base-color-over: #f3f3f3 !default;
 $button-default-base-color-focus: $button-default-base-color-over !default;
+
+
 $button-default-base-color-pressed: #d6d6d6 !default;
 $button-default-base-color-disabled: adjust-color($base-color, $hue: 0deg, $saturation: -55.556%, $lightness: 12.745%) !default; //F7F7F7
 
@@ -22,6 +31,9 @@ $button-default-background-gradient-color-stops-focus: null !default;
 $button-default-background-gradient-color-stops-pressed: null !default;
 $button-default-background-gradient-color-stops-disabled: null !default;
 
+$button-toolbar-radius: 0px !default;
+$button-toolbar-border-radius: 0px !default;
+
 $button-toolbar-border-color-over: $button-default-border-color-over !default;
 $button-toolbar-border-color-focus: $button-default-border-color-focus !default;
 $button-toolbar-border-color-pressed: $button-default-border-color-pressed !default;
@@ -35,4 +47,4 @@ $button-large-font-size: 12px !default;
 $button-large-font-weight: bold !default;
 $button-large-text-padding: 5px !default;
 
-$button-icon-spacing: 2px !default;
+$button-icon-spacing: 2px !default;*/
