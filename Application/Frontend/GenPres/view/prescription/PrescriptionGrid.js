@@ -14,7 +14,7 @@ Ext.define('GenPres.view.prescription.PrescriptionGrid', {
 
 /*    store: 'prescription.Prescription',*/
 
-    title:'voorscrhiften',
+    title:'Voorschriften',
 
     columns: [
         {header: 'StartDate',  dataIndex: 'StartDate'},

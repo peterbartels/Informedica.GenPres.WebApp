@@ -1,0 +1,1 @@
+sencha compile -classpath=./ext/src -classpath=./Shared -classpath=./Management exclude -all and include -namespace Management and include -namespace Shared and concat -yui ./management-all.js

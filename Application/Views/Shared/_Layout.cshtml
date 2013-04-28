@@ -9,7 +9,16 @@ General setup for everything using ext
 <head>
     <title>@ViewBag.Title</title>
     
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Frontend/packages/genpres-theme/build/resources/genpres-theme-all.css")" />
+    @if (Request.Url.AbsolutePath.Contains("Management"))
+    {
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Frontend/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all.css")" />
+    }
+    else
+    {
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Frontend/packages/genpres-theme/build/resources/genpres-theme-all.css")" />
+    }
+    
+
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/Frontend/Styles/GenPres/css/GenPres.css")" />
     
     @RenderSection("CSS", false)
